@@ -41,7 +41,7 @@ class HomeScreen extends GetView<HomeController> {
               ),
 
               // List cars
-              listGridCars(controller),
+              gridView(controller),
               Image.asset(
                 Images.car2,
                 fit: BoxFit.fitWidth,

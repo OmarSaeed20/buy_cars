@@ -1,6 +1,6 @@
 import "/index.dart";
 
-Widget listGridCars(HomeController controller, [void Function()? onTap]) =>
+Widget gridView(HomeController controller, [void Function()? onTap]) =>
     Container(
       height: getProportionateScreenHeight(605),
       width: SizeConfig.screenWidth,

@@ -75,7 +75,7 @@ class DetailsScreen extends StatelessWidget {
             SizedBox(
               height: getProportionateScreenHeight(440),
               child: GetBuilder<HomeController>(
-                builder: (controller) => listGridCars(controller),
+                builder: (controller) => gridView(controller),
               ),
             ),
             // kHeightBox20,

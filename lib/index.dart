@@ -40,4 +40,4 @@ export 'view/screens/details/widgets/check_other_cars.dart';
 // view /  widgets
 export 'view/widgets/icon_btn_widget.dart';
 export 'view/widgets/text_widget.dart';
-export 'view/widgets/list_grid_view.dart';
+export 'view/widgets/grid_view.dart';
