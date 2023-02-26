@@ -29,8 +29,8 @@ Widget appBarIcon(
           child: SvgPicture.asset(
             image,
             color: imageColor ?? Colors.white,
-            height: imagHei ?? getProportionateScreenHeight(17),
-            width: imagWid ?? getProportionateScreenHeight(17),
+            height: getProportionateScreenHeight(imagHei ?? 17),
+            width: getProportionateScreenHeight(imagWid ?? 17),
           ),
         ),
       ),

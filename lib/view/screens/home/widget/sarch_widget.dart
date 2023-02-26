@@ -7,7 +7,7 @@ Widget searchWidget({required void Function() onTap}) => GestureDetector(
         width: double.infinity,
         margin: EdgeInsets.symmetric(
             horizontal: getProportionateScreenHeight(25),
-            vertical: getProportionateScreenHeight(25)),
+            vertical: getProportionateScreenHeight(20)),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey, width: 1.3),

@@ -1,9 +1,8 @@
 import '/index.dart';
 
-
 Widget imageDetailsScreen() => SizedBox(
       height: getProportionateScreenHeight(380),
-      width: SizeConfig.screenWidth,
+      width: Dimensions.screenWidth,
       child: Stack(
         children: [
           Positioned(
@@ -12,11 +11,8 @@ Widget imageDetailsScreen() => SizedBox(
             right: 0.0,
             child: SizedBox(
               height: getProportionateScreenHeight(300),
-              width: SizeConfig.screenWidth,
-              child: Image.asset(
-                Images.car,
-                fit: BoxFit.fill,
-              ),
+              width: Dimensions.screenWidth,
+              child: Image.asset(Images.car, fit: BoxFit.fill),
             ),
           ),
           Positioned(
@@ -52,18 +48,25 @@ Widget imageDetailsScreen() => SizedBox(
             top: getProportionateScreenHeight(310) -
                 getProportionateScreenHeight(30),
             bottom: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                CardDetailsCarWidget(
-                    imagePath: Images.kM, title: 'المشي', num: '2000'),
-                CardDetailsCarWidget(
-                    imagePath: Images.buildTime,
-                    title: 'سنة الصنع',
-                    num: '2019'),
-                CardDetailsCarWidget(
-                    imagePath: Images.slindr, title: 'المحرك/سلندر', num: '6'),
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(30)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  CardDetailsCarWidget(
+                      imagePath: Images.kM, title: 'المشي', num: '2000'),
+                  CardDetailsCarWidget(
+                      imagePath: Images.buildTime,
+                      title: 'سنة الصنع',
+                      num: '2019'),
+                  CardDetailsCarWidget(
+                    imagePath: Images.slindr,
+                    title: 'المحرك/سلندر',
+                    num: '6',
+                  ),
+                ],
+              ),
             ),
           ),
         ],

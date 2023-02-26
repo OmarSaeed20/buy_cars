@@ -1,9 +1,9 @@
 import '../../index.dart';
 
 class TextWidget extends StatelessWidget {
-  const TextWidget({
+  const TextWidget(
+    this.text, {
     Key? key,
-    required this.text,
     this.fontSize,
     this.spacing,
     this.color,
@@ -28,9 +28,9 @@ class TextWidget extends StatelessWidget {
       text,
       overflow: overFlow,
       maxLines: maxLines,
-      textAlign:textAlign ,
+      textAlign: textAlign,
       style: TextStyle(
-        fontSize: fontSize ?? getProportionateScreenWidth(16),
+        fontSize: getProportionateScreenWidth(fontSize ?? 16),
         letterSpacing: spacing,
         color: color ?? AppColors.black,
         height: height,

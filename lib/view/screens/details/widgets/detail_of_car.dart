@@ -1,8 +1,9 @@
 import '/index.dart';
 
 Widget detailOfCar() => Container(
-      color: AppColors.white,
+      // color: AppColors.grey,
       padding: EdgeInsets.only(
+        right: getProportionateScreenWidth(15),
         bottom: getProportionateScreenHeight(20),
       ),
       child: Column(

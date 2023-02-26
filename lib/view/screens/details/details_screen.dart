@@ -12,46 +12,54 @@ class DetailsScreen extends StatelessWidget {
           children: [
             imageDetailsScreen(),
             Padding(
-              padding: paddingSTEB,
+              padding: EdgeInsets.symmetric(
+                  vertical: getProportionateScreenHeight(10),
+                  horizontal: getProportionateScreenWidth(16)),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Row(
                     children: [
-                      TextWidget(
-                        text: 'د.ك',
-                        color: AppColors.grey,
-                        textAlign: TextAlign.justify,
-                        fontWeight: FontWeight.w600,
-                        fontSize: getProportionateScreenWidth(14),
+                      Container(
+                        height: getProportionateScreenHeight(30),
+                        width: getProportionateScreenHeight(25),
+                        alignment: Alignment.bottomRight,
+                        child: TextWidget(
+                          'د.ك',
+                          color: AppColors.black,
+                          // textAlign: TextAlign.justify,
+                          fontWeight: FontWeight.w700,
+                          fontSize: getProportionateScreenWidth(14),
+                        ),
                       ),
                       kWidthBox5,
                       TextWidget(
-                        text: '8,700',
+                        '8,700',
                         fontWeight: FontWeight.w700,
                         fontSize: getProportionateScreenWidth(28),
                       ),
                       const Spacer(),
                       TextWidget(
-                        text: 'يوكن بحالة جيدة',
+                        'يوكن بحالة جيدة',
                         fontSize: getProportionateScreenWidth(22),
                       ),
                     ],
                   ),
+                  kHeightBox10,
                   Container(
                     padding: EdgeInsetsDirectional.only(
                         top: getProportionateScreenWidth(5),
                         bottom: getProportionateScreenWidth(5),
                         end: getProportionateScreenWidth(10)),
                     decoration: BoxDecoration(
-                      color: Colors.brown.shade400,
+                      color: Color.fromARGB(255, 177, 65, 30),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextWidget(
-                          text: 'مكفولة حتي 70000 كم',
+                          'مكفولة حتي 70000 كم',
                           color: AppColors.white,
                           fontSize: getProportionateScreenWidth(18),
                         ),
@@ -64,21 +72,27 @@ class DetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  kHeightBox20,
-                  detailOfCar(),
                   kHeightBox10,
-                  const TextWidget(textAlign: TextAlign.right, text: kCarInfo),
-                  checkOtherCar()
                 ],
               ),
             ),
-            SizedBox(
-              height: getProportionateScreenHeight(440),
-              child: GetBuilder<HomeController>(
-                builder: (controller) => gridView(controller),
-              ),
+            detailOfCar(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(15)),
+              child: Column(children: [
+                const TextWidget(
+                  textAlign: TextAlign.right,
+                  kCarInfo,
+                  fontWeight: FontWeight.w600,
+                ),
+                checkOtherCar(),
+              ]),
             ),
-            // kHeightBox20,
+            GetBuilder<HomeController>(
+              builder: (controller) => gridList(controller,
+                  itemCount: controller.listGridCar.take(4).length),
+            ),
           ],
         ),
       ),

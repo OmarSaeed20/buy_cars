@@ -21,11 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Cairo'),
-      home: Builder(builder: (context) {
-        SizeConfig().init(context);
-        return const HomeScreen();
-      }),
+      // theme: ThemeData(fontFamily: 'Cairo'),
+      home: const HomeScreen(),
     );
   }
 }

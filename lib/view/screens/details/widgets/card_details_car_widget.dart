@@ -6,27 +6,29 @@ class CardDetailsCarWidget extends StatelessWidget {
     required this.imagePath,
     required this.title,
     required this.num,
+    this.titleHei,
   });
   final String imagePath;
   final String title;
-
+  final double? titleHei;
   final String num;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsetsDirectional.fromSTEB(
         getProportionateScreenWidth(10),
-        getProportionateScreenHeight(5),
+        getProportionateScreenHeight(10),
         getProportionateScreenWidth(10),
         getProportionateScreenHeight(5),
       ),
-      height: getProportionateScreenHeight(90),
+      height: getProportionateScreenHeight(85),
       width: getProportionateScreenHeight(90),
       decoration: BoxDecoration(
-        borderRadius: borderRadius,
+        borderRadius: BorderRadius.circular(10),
         color: Colors.grey.shade200,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(
             imagePath,
@@ -35,11 +37,13 @@ class CardDetailsCarWidget extends StatelessWidget {
             // color: AppColors.,
           ),
           TextWidget(
-            text: title,
+            title,
+            color: Colors.black54,
+            height: titleHei,
             fontSize: getProportionateScreenWidth(14),
           ),
           TextWidget(
-            text: num,
+            num,
             fontWeight: FontWeight.w600,
             fontSize: getProportionateScreenWidth(18),
           ),

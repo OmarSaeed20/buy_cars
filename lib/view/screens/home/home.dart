@@ -6,21 +6,18 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
-      body: Container(
-        height: SizeConfig.screenHeight,
-        width: SizeConfig.screenWidth,
-        padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
+      body: SizedBox(
+        height: Dimensions.screenHeight,
+        width: Dimensions.screenWidth,
         child: SingleChildScrollView(
           child: Column(
             children: [
+              kHeightBox10,
               // List cars
               listCars(controller),
 
               // poster
-              Container(
-                  margin:
-                      EdgeInsets.only(top: getProportionateScreenHeight(10)),
-                  child: Image.asset(Images.car3)),
+              Image.asset(Images.car3),
 
               // search
               searchWidget(onTap: () {}),
@@ -29,7 +26,7 @@ class HomeScreen extends GetView<HomeController> {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: getProportionateScreenHeight(20),
-                    vertical: getProportionateScreenHeight(10)),
+                    vertical: getProportionateScreenHeight(0)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -39,12 +36,14 @@ class HomeScreen extends GetView<HomeController> {
                   ],
                 ),
               ),
-
+              kHeightBox20,
               // List cars
-              gridView(controller),
+              gridList(controller, itemCount: controller.listGridCar.length),
+              kHeightBox5,
               Image.asset(
                 Images.car2,
-                fit: BoxFit.fitWidth,
+                width: Dimensions.screenWidth,
+                fit: BoxFit.cover,
               ),
             ],
           ),

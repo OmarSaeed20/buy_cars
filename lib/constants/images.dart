@@ -18,8 +18,10 @@ class Images {
   static const String share = '${_kIconDir}share.svg';
   static const String search = '${_kIconDir}Search.svg';
   static const String slindr = '${_kIconDir}slindr.svg';
+
   static const String menu = '${_kIconDir}menu.svg"';
-  static const String notif = '${_kIconDir}Notification.svg"';
+  static const String notification = "${_kIconDir}notification.svg";
+  
   static const String price = "${_kIconDir}price.svg";
   static const String buildTime = "${_kIconDir}build-time.svg";
   static const String kM = "${_kIconDir}km.svg";

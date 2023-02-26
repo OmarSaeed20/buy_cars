@@ -38,7 +38,7 @@ class OutlineBtnWidget extends StatelessWidget {
             child: Row(
               children: [
                 TextWidget(
-                  text: title,
+                  title,
                   color: color ?? AppColors.black,
                   fontSize: getProportionateScreenWidth(14),
                 ),

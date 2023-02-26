@@ -1,13 +1,13 @@
 import 'package:buy_cars/index.dart';
 
-Widget listCars(dynamic controller) => SizedBox(
-      height: 100,
+Widget listCars(HomeController controller) => SizedBox(
+      height: getProportionateScreenHeight(100),
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: controller.listImage.length,
+        itemCount: controller.listCar.length,
         itemBuilder: (context, index) {
-          final list = controller.listImage[index];
+          final list = controller.listCar[index];
           return Column(
             children: [
               Container(
@@ -31,8 +31,12 @@ Widget listCars(dynamic controller) => SizedBox(
                   ),
                 ),
               ),
-              SizedBox(height: getProportionateScreenHeight(8)),
-              Text(list.name),
+              // SizedBox(height: getProportionateScreenHeight(4)),
+              TextWidget(
+                list.name,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
             ],
           );
         },

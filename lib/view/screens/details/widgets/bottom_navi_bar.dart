@@ -1,6 +1,5 @@
 import '/index.dart';
 
-
 Widget bottomNavigationBar() => Container(
       height: getProportionateScreenHeight(60),
       padding: EdgeInsetsDirectional.only(
@@ -25,13 +24,13 @@ Widget bottomNavigationBar() => Container(
           IconBtnWidget(
             onPressed: () {},
             icon: Images.chat,
-            color: AppColors.blue.withOpacity(0.6),
+            color: AppColors.blueLight.withOpacity(0.6),
             size: getProportionateScreenHeight(16),
           ),
           IconBtnWidget(
             onPressed: () {},
             icon: Images.call,
-            color: AppColors.blue.withOpacity(0.6),
+            color: AppColors.blueLight.withOpacity(0.6),
           ),
         ],
       ),

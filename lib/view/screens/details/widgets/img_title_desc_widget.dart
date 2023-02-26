@@ -13,16 +13,26 @@ class ImgAndTitleAndDescWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: Dimensions.screenWidth,
       margin: EdgeInsets.symmetric(vertical: getProportionateScreenHeight(2)),
       padding: EdgeInsets.only(left: getProportionateScreenHeight(100)),
-      color: AppColors.blue.withOpacity(0.3),
+      color: AppColors.blueLight.withOpacity(0.2),
       child: Row(
         children: [
-          Expanded(child: TextWidget(text: desc)),
-          TextWidget(
-            text: title,
-            textAlign: TextAlign.center,
+          SizedBox(
+            width: getProportionateScreenWidth(80),
+            child: TextWidget(
+              desc,
+              fontWeight: FontWeight.w600,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: TextWidget(
+              title,
+              fontWeight: FontWeight.w600,
+              textAlign: TextAlign.right,
+            ),
           ),
           kWidthBox10,
           SvgPicture.asset(
@@ -31,6 +41,7 @@ class ImgAndTitleAndDescWidget extends StatelessWidget {
             width: getProportionateScreenHeight(20),
             height: getProportionateScreenHeight(20),
           ),
+          kWidthBox5,
         ],
       ),
     );
